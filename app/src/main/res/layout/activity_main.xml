@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Login"
-        android:textSize="30dp"/>
+        android:textSize="20dp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
