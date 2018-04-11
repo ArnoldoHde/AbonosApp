@@ -50,7 +50,7 @@ private LoginUsuario loginUsuario;
     }
     public void setLogin(LoginEvent event){
 
-        Toast.makeText(this, "Registrado con Exito"+event.getMessage(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Bienvenido"+event.getMessage(), Toast.LENGTH_SHORT).show();
 
     }
 
