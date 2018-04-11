@@ -37,16 +37,22 @@ private LoginUsuario loginUsuario;
 
     }
     //Creo el metodo para obtener el texto del layaut y validar los datos
-    private void Login(){
-        String correo = email.getText().toString();
-        String contraseña = password.getText().toString();
+    private void Login() {
+        //valido si los campos estan bacios
 
-        loginUsuario = new LoginUsuario();
-        loginUsuario.setCorreo(correo);
-        loginUsuario.setContraseña(contraseña);
+        if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Los campos o Algun campo estan vacio", Toast.LENGTH_SHORT).show();
+        } else {
+            String correo = email.getText().toString();
+            String contraseña = password.getText().toString();
 
-        LoginManeger.login(loginUsuario);
+            loginUsuario = new LoginUsuario();
+            loginUsuario.setCorreo(correo);
+            loginUsuario.setContraseña(contraseña);
 
+            LoginManeger.login(loginUsuario);
+
+        }
     }
     public void setLogin(LoginEvent event){
 
