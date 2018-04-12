@@ -20,9 +20,9 @@ import retrofit2.Response;
 
 public class RegistroManager {
     public static void singUp(RegistroData registro) {
-        Call<JsonObject> callResponse = ApiControler
+        /*Call<JsonObject> callResponse = ApiControler
                 .createService(Interfaz.class)
-                .singUp(registro);
+                //.singUp(registro);
         callResponse.enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
@@ -33,11 +33,11 @@ public class RegistroManager {
 
                     if (respuesta1) {
                         JsonElement token = response.body().get("auth_token");
-                        Config.sharedPreferencesUser.saveSession(token.toString());
+                      //  Config.sharedPreferencesUser.saveSession(token.toString());
                         String mesaje = token.toString();
                         BusProvider.getInstnce().post((new SingUpEvent(mesaje)));
                     }else{
-                        BusProvider.getInstnce().post(new ErrorEvent(response.message(), 0));
+                       // BusProvider.getInstnce().post(new ErrorEvent(response.message(), 0));
                     }
 
                 }
@@ -45,10 +45,10 @@ public class RegistroManager {
 
             @Override
             public void onFailure(Call<JsonObject> call, Throwable t) {
-                BusProvider.getInstnce().post(new ErrorEvent(t.getMessage(), 0));
+                //BusProvider.getInstnce().post(new ErrorEvent(t.getMessage(), 0));
 
             }
         });
-
+*/
     }
 }

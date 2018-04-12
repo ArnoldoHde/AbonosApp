@@ -7,7 +7,7 @@ package com.example.arnoldo.myapplication.Events;
 public class SingUpEvent {
     private String token;
 
-    public SignUpEvent(String message) {
+    public SingUpEvent(String message) {
         this.token = message;
     }
 

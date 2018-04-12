@@ -1,4 +1,4 @@
-package com.example.arnoldo.myapplication;
+package com.example.arnoldo.myapplication.Actividades;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.arnoldo.myapplication.Modelos.RegistroData;
+import com.example.arnoldo.myapplication.R;
 
 public class Registro extends AppCompatActivity {
 EditText cPass,Nombre,Pass,Email,Telefono;

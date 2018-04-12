@@ -4,7 +4,7 @@ package com.example.arnoldo.myapplication;
  * Created by arnoldo on 10/04/18.
  */
 
-//Son los parametros que le enviaremos a la api simpre y cuando el usuario este registrado
+//Son los parametros que le enviaremos a la api siempre y cuando el usuario este registrado
 public class LoginUsuario {
     private String email;
     private String password;

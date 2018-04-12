@@ -4,7 +4,7 @@ package com.example.arnoldo.myapplication;
  * Created by arnoldo on 10/04/18.
  */
 
-class LoginErrorEvent {
+public class LoginErrorEvent {
     public String message = "";
     public int code = 0;
 
