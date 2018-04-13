@@ -1,4 +1,4 @@
-package com.example.arnoldo.myapplication;
+package com.example.arnoldo.myapplication.Utils;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

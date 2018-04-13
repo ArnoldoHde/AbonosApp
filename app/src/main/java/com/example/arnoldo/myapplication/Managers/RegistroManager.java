@@ -1,18 +1,6 @@
 package com.example.arnoldo.myapplication.Managers;
 
-import com.example.arnoldo.myapplication.ApiControler;
-import com.example.arnoldo.myapplication.BusProvider;
-import com.example.arnoldo.myapplication.Config;
-import com.example.arnoldo.myapplication.Events.SingUpEvent;
-import com.example.arnoldo.myapplication.Interfaz;
 import com.example.arnoldo.myapplication.Modelos.RegistroData;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Created by alan on 11/04/18.

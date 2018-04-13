@@ -1,14 +1,13 @@
-package com.example.arnoldo.myapplication;
+package com.example.arnoldo.myapplication.Managers;
 
 /**
  * Created by arnoldo on 10/04/18.
  */
 
-public class LoginErrorEvent {
+class ErrorEvent {
     public String message = "";
     public int code = 0;
-
-    public LoginErrorEvent(String message, int code) {
+    public ErrorEvent(String message, int code) {
         this.message = message;
         this.code = code;
     }
@@ -20,4 +19,5 @@ public class LoginErrorEvent {
     public String getMessage() {
         return this.message;
     }
-}
+    }
+

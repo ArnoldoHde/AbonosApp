@@ -1,13 +1,14 @@
-package com.example.arnoldo.myapplication;
+package com.example.arnoldo.myapplication.Events;
 
 /**
  * Created by arnoldo on 10/04/18.
  */
-
-class ErrorEvent {
+//Este eveno en caso de que alla un error como 404 not found y esos tipos de errores
+public class LoginErrorEvent {
     public String message = "";
     public int code = 0;
-    public ErrorEvent(String message, int code) {
+
+    public LoginErrorEvent(String message, int code) {
         this.message = message;
         this.code = code;
     }
@@ -19,5 +20,4 @@ class ErrorEvent {
     public String getMessage() {
         return this.message;
     }
-    }
-
+}
