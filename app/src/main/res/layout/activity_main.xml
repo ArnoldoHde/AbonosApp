@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     tools:context="com.example.arnoldo.myapplication.Actividades.MainActivity">
 
     <TextView
@@ -12,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Login"
-        android:textSize="20dp"
-        android:layout_marginTop="30sp"/>
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"/>
     <EditText
         android:id="@+id/edtUsuario"
         android:layout_width="match_parent"

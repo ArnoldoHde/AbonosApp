@@ -11,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Actividades.MainActivity">
-        </activity>
+        <activity android:name=".Actividades.MainActivity"></activity>
         <activity android:name=".Actividades.Registro" />
-        <activity android:name=".Actividades.inicioActivity">
+        <activity
+            android:name=".Actividades.InicioActivity"
+            android:label="@string/title_activity_inicio"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
