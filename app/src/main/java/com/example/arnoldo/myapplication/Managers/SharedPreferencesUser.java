@@ -1,4 +1,4 @@
-package com.example.arnoldo.myapplication;
+package com.example.arnoldo.myapplication.Managers;
 
 import android.content.Context;
 import android.content.SharedPreferences;

@@ -1,5 +1,9 @@
-package com.example.arnoldo.myapplication;
-
+package com.example.arnoldo.myapplication.Managers;
+import com.example.arnoldo.myapplication.Events.LoginEvent;
+import com.example.arnoldo.myapplication.Utils.Interfaz;
+import com.example.arnoldo.myapplication.Modelos.LoginUsuario;
+import com.example.arnoldo.myapplication.Utils.ApiControler;
+import com.example.arnoldo.myapplication.Utils.BusProvider;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -31,8 +35,6 @@ public class LoginManeger {
                     Config.sharedPreferencesUser.saveSession(token.toString());
                     String mesaje = token.toString();
                     BusProvider.getInstnce().post((new LoginEvent(mesaje)));
-
-
 
                 } else {
                     BusProvider.getInstnce().post(new ErrorEvent(response.message(), 0));

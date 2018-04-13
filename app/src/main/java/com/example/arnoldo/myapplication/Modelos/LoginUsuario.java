@@ -1,4 +1,4 @@
-package com.example.arnoldo.myapplication;
+package com.example.arnoldo.myapplication.Modelos;
 
 /**
  * Created by arnoldo on 10/04/18.
@@ -6,41 +6,41 @@ package com.example.arnoldo.myapplication;
 
 //Son los parametros que le enviaremos a la api siempre y cuando el usuario este registrado
 public class LoginUsuario {
-    private String email;
-    private String password;
+    private String correo;
+    private String contrasena;
 
 
 
     public LoginUsuario(String email, String password)
 
     {
-        this.email = email;
-        this.password = password;
+        this.correo = email;
+        this.contrasena = password;
 
 
     }
 
     public LoginUsuario() {
 
-        this.email = "";
-        this.password = "";
+        this.correo = "";
+        this.contrasena = "";
 
     }
 
     public String getCorreo() {
-        return email;
+        return correo;
     }
 
     public void setCorreo(String correo) {
-        this.email = correo;
+        this.correo = correo;
     }
 
     public String getContraseña() {
-        return password;
+        return contrasena;
     }
 
     public void setContraseña(String contraseña) {
-        this.password = contraseña;
+        this.contrasena = contraseña;
     }
 }
 

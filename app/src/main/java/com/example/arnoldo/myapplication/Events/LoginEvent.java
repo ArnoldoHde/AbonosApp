@@ -1,4 +1,4 @@
-package com.example.arnoldo.myapplication;
+package com.example.arnoldo.myapplication.Events;
 
 /**
  * Created by arnoldo on 10/04/18.

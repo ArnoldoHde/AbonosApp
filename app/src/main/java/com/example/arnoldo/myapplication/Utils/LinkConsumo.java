@@ -1,4 +1,4 @@
-package com.example.arnoldo.myapplication;
+package com.example.arnoldo.myapplication.Utils;
 
 /**
  * Created by arnoldo on 10/04/18.
