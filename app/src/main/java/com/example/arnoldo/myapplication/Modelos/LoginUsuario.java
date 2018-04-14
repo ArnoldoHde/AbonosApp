@@ -8,14 +8,16 @@ package com.example.arnoldo.myapplication.Modelos;
 public class LoginUsuario {
     private String correo;
     private String contrasena;
+    private int telefono;
 
 
 
-    public LoginUsuario(String email, String password)
+    public LoginUsuario(String email, String password, int telefono)
 
     {
         this.correo = email;
         this.contrasena = password;
+        this.telefono = telefono;
 
 
     }
@@ -24,7 +26,16 @@ public class LoginUsuario {
 
         this.correo = "";
         this.contrasena = "";
+        this.telefono =0;
 
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
     }
 
     public String getCorreo() {

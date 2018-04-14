@@ -1,5 +1,6 @@
 package com.example.arnoldo.myapplication.Actividades;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,7 @@ import com.example.arnoldo.myapplication.Modelos.LoginUsuario;
 import com.example.arnoldo.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
-EditText email,password;
+EditText email,password,numTelefono;
 TextView tvOlvidastecontra,tvCuenta;
 Button btnIngresar;
 private LoginUsuario loginUsuario;
@@ -29,6 +30,7 @@ private LoginUsuario loginUsuario;
         tvOlvidastecontra=findViewById(R.id.tvOlvidastecontra);
         tvCuenta=findViewById(R.id.tvCuenta);
         btnIngresar=findViewById(R.id.btnIngresar);
+        numTelefono=findViewById(R.id.edtTelefono);
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,10 +50,12 @@ private LoginUsuario loginUsuario;
         } else {
             String correo = email.getText().toString();
             String contrasena = password.getText().toString();
+            int telefono=Integer.parseInt(numTelefono.getText().toString());
 
             loginUsuario = new LoginUsuario();
             loginUsuario.setCorreo(correo);
             loginUsuario.setContraseña(contrasena);
+            loginUsuario.setTelefono(telefono);
 
             LoginManeger.login(loginUsuario);
 
@@ -61,6 +65,7 @@ private LoginUsuario loginUsuario;
 
         Toast.makeText(this, "Bienvenido"+event.getMessage(), Toast.LENGTH_SHORT).show();
         // debo agregar el intent a la pagina principal
+        Intent intent= new Intent( MainActivity.this,InicioActivity.class);
     }
 
     public void LoginError(LoginErrorEvent event){
