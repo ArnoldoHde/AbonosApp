@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="65" />
+                                                <entry key="scalingPercent" value="111" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -46,7 +46,6 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="scalingPercent" value="115" />
-                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -68,7 +67,7 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundColor" value="da0f00" />
-                                      <entry key="backgroundImage" value="$USER_HOME$/Descargas/icono.png" />
+                                      <entry key="backgroundImage" value="$USER_HOME$/Descargas/icono525.png" />
                                       <entry key="foregroundLayerName" value="ic_launcher_bill" />
                                       <entry key="previewDensity" value="XXXHIGH" />
                                     </map>
