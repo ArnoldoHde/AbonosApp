@@ -18,7 +18,7 @@ import com.example.arnoldo.myapplication.R;
 public class MainActivity extends AppCompatActivity {
 EditText email,password,numTelefono;
 TextView tvOlvidastecontra,tvCuenta;
-Button btnIngresar;
+Button btnIngresar,btnFlotante;
 private LoginUsuario loginUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +27,11 @@ private LoginUsuario loginUsuario;
         //Prueba
         email=findViewById(R.id.edtUsuario);
         password=findViewById(R.id.edtContraseña);
-        tvOlvidastecontra=findViewById(R.id.tvOlvidastecontra);
         tvCuenta=findViewById(R.id.tvCuenta);
         btnIngresar=findViewById(R.id.btnIngresar);
         numTelefono=findViewById(R.id.edtTelefono);
+        btnFlotante=findViewById(R.id.btnFlotante);
+
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,8 +39,18 @@ private LoginUsuario loginUsuario;
                 Login();
             }
         });
+        btnFlotante.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                botonFlotante();
+            }
+        });
         //Prueba Conexion de Alan
 
+
+    }
+    private  void botonFlotante(){
+       // manda el intent a la actividad que quieras te amo cesar
     }
     //Creo el metodo para obtener el texto del layaut y validar los datos
     private void Login() {
