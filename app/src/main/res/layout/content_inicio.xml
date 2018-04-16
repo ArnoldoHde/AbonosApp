@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_action_name"
             android:layout_gravity="bottom|end"
-            app:backgroundTint="@color/colorAccent"
+            app:backgroundTint="#8f0000"
             app:fabSize="normal"
             />
     </FrameLayout>

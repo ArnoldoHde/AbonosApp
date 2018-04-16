@@ -26,7 +26,7 @@ import com.example.arnoldo.myapplication.R;
 
 public class InicioActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    Button btnFlotante;
+
 
     //Se crea el menú de Navegacion entre Fragments "Inicio, Clientes y Pedidos"
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -81,7 +81,7 @@ public class InicioActivity extends AppCompatActivity
             public void onClick(View view) {
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-       Intent intent= new Intent(getApplicationContext(),AgregarActivity.class);
+       Intent intent= new Intent(InicioActivity.this,AgregarActivity.class);
             startActivity(intent);
             }
         });
