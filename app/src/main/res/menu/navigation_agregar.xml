@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/agregarCliente"
+        android:title="AGREGAR CLIENTE" />
+
+    <item
+        android:id="@+id/agregarPedido"
+        android:title="AGREGAR PEDIDO" />
+
+    <item
+        android:id="@+id/agregarVale"
+        android:title="VALE" />
+
+</menu>
