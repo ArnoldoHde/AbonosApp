@@ -10,15 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="pedidos" />
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btnFlotante"
-        style="FloatingActionButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_action_name"
-        app:backgroundTint="@color/colorAccent"
-        app:fabSize="normal"
-        android:layout_gravity="bottom|right|end" />
+
 
 
 </FrameLayout>
