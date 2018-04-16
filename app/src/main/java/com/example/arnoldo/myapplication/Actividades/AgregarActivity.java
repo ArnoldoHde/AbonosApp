@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toolbar;
 
 import com.example.arnoldo.myapplication.Fragmentos.fragment_agregarCliente;
 import com.example.arnoldo.myapplication.Fragmentos.fragment_agregarPedido;
@@ -51,9 +52,6 @@ public class AgregarActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigationAgregar);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        ActionBar actionBar= getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
     }
 }
