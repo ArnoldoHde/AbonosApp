@@ -17,8 +17,8 @@ import com.example.arnoldo.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
 EditText email,password,numTelefono;
-TextView tvOlvidastecontra,tvCuenta;
-Button btnIngresar,btnFlotante;
+TextView tvCuenta;
+Button btnIngresar;
 private LoginUsuario loginUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ private LoginUsuario loginUsuario;
         tvCuenta=findViewById(R.id.tvCuenta);
         btnIngresar=findViewById(R.id.btnIngresar);
         numTelefono=findViewById(R.id.edtTelefono);
-        btnFlotante=findViewById(R.id.btnFlotante);
+
 
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
@@ -39,15 +39,20 @@ private LoginUsuario loginUsuario;
                 Login();
             }
         });
-        btnFlotante.setOnClickListener(new View.OnClickListener() {
+
+        tvCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                botonFlotante();
+                crearCuenta();
             }
         });
         //Prueba Conexion de Alan
 
 
+    }
+    private  void crearCuenta(){
+        Intent intent= new Intent(MainActivity.this,Registro.class);
+        startActivity(intent);
     }
     private  void botonFlotante(){
        // manda el intent a la actividad que quieras te amo cesar
@@ -75,7 +80,7 @@ private LoginUsuario loginUsuario;
     public void setLogin(LoginEvent event){
 
         Toast.makeText(this, "Bienvenido"+event.getMessage(), Toast.LENGTH_SHORT).show();
-        // debo agregar el intent a la pagina principal
+        // debo agregar el intent a la pantalla principal
         Intent intent= new Intent( MainActivity.this,InicioActivity.class);
     }
 
