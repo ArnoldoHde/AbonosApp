@@ -55,12 +55,7 @@
         android:layout_height="wrap_content"
         android:hint="Crear Cuenta"
         android:layout_marginTop="50dp"/>
-    <TextView
-        android:id="@+id/tvOlvidastecontra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Olvidaste tu contraseña"
-        android:layout_marginTop="50dp"/>
+
 
 
 </LinearLayout>
