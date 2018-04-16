@@ -11,13 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/abono">
-        <activity android:name=".Actividades.MainActivity"
-            android:theme="@style/abono"></activity>
+        <activity
+            android:name=".Actividades.MainActivity"
+            android:theme="@style/abono" />
         <activity android:name=".Actividades.Registro" />
         <activity
             android:name=".Actividades.InicioActivity"
             android:label="@string/title_activity_inicio"
             android:theme="@style/abono">
+
+        </activity>
+        <activity android:name=".Actividades.Spashscreen" android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
