@@ -8,13 +8,21 @@
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     tools:context="com.example.arnoldo.myapplication.Actividades.MainActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:background="@drawable/login"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Login"
+        android:text="Abonos App"
         android:textSize="20sp"
-        android:layout_marginTop="30dp"/>
+
+        />
     <EditText
         android:id="@+id/edtUsuario"
         android:layout_width="match_parent"
@@ -47,6 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingresar"
+        android:background="@color/colorAccent"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"/>
     <TextView
@@ -54,13 +63,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Crear Cuenta"
-        android:layout_marginTop="50dp"/>
-    <TextView
-        android:id="@+id/tvOlvidastecontra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Olvidaste tu contraseña"
-        android:layout_marginTop="50dp"/>
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:gravity="bottom|end"/>
+
 
 
 </LinearLayout>

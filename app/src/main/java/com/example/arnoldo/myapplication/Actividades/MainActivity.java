@@ -17,7 +17,7 @@ import com.example.arnoldo.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
 EditText email,password,numTelefono;
-TextView tvOlvidastecontra,tvCuenta;
+TextView tvCuenta;
 Button btnIngresar;
 private LoginUsuario loginUsuario;
     @Override
@@ -27,10 +27,11 @@ private LoginUsuario loginUsuario;
         //Prueba
         email=findViewById(R.id.edtUsuario);
         password=findViewById(R.id.edtContraseña);
-        tvOlvidastecontra=findViewById(R.id.tvOlvidastecontra);
         tvCuenta=findViewById(R.id.tvCuenta);
         btnIngresar=findViewById(R.id.btnIngresar);
         numTelefono=findViewById(R.id.edtTelefono);
+
+
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,8 +39,23 @@ private LoginUsuario loginUsuario;
                 Login();
             }
         });
+
+        tvCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crearCuenta();
+            }
+        });
         //Prueba Conexion de Alan
 
+
+    }
+    private  void crearCuenta(){
+        Intent intent= new Intent(MainActivity.this,Registro.class);
+        startActivity(intent);
+    }
+    private  void botonFlotante(){
+       // manda el intent a la actividad que quieras te amo cesar
     }
     //Creo el metodo para obtener el texto del layaut y validar los datos
     private void Login() {
@@ -64,7 +80,7 @@ private LoginUsuario loginUsuario;
     public void setLogin(LoginEvent event){
 
         Toast.makeText(this, "Bienvenido"+event.getMessage(), Toast.LENGTH_SHORT).show();
-        // debo agregar el intent a la pagina principal
+        // debo agregar el intent a la pantalla principal
         Intent intent= new Intent( MainActivity.this,InicioActivity.class);
     }
 
