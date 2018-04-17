@@ -1,6 +1,17 @@
 package com.example.arnoldo.myapplication.Managers;
 
+import com.example.arnoldo.myapplication.Events.SingUpEvent;
 import com.example.arnoldo.myapplication.Modelos.RegistroData;
+import com.example.arnoldo.myapplication.Utils.ApiControler;
+import com.example.arnoldo.myapplication.Utils.BusProvider;
+import com.example.arnoldo.myapplication.Utils.Interfaz;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by alan on 11/04/18.
@@ -8,9 +19,9 @@ import com.example.arnoldo.myapplication.Modelos.RegistroData;
 
 public class RegistroManager {
     public static void singUp(RegistroData registro) {
-        /*Call<JsonObject> callResponse = ApiControler
+        Call<JsonObject> callResponse = ApiControler
                 .createService(Interfaz.class)
-                //.singUp(registro);
+                .registro(registro);
         callResponse.enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
@@ -21,11 +32,11 @@ public class RegistroManager {
 
                     if (respuesta1) {
                         JsonElement token = response.body().get("auth_token");
-                      //  Config.sharedPreferencesUser.saveSession(token.toString());
+                       Config.sharedPreferencesUser.saveSession(token.toString());
                         String mesaje = token.toString();
                         BusProvider.getInstnce().post((new SingUpEvent(mesaje)));
                     }else{
-                       // BusProvider.getInstnce().post(new ErrorEvent(response.message(), 0));
+                        BusProvider.getInstnce().post(new ErrorEvent(response.message(), 0));
                     }
 
                 }
@@ -33,10 +44,10 @@ public class RegistroManager {
 
             @Override
             public void onFailure(Call<JsonObject> call, Throwable t) {
-                //BusProvider.getInstnce().post(new ErrorEvent(t.getMessage(), 0));
+                BusProvider.getInstnce().post(new ErrorEvent(t.getMessage(), 0));
 
             }
         });
-*/
+
     }
 }

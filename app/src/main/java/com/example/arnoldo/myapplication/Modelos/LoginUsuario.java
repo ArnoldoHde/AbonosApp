@@ -12,9 +12,7 @@ public class LoginUsuario {
 
 
 
-    public LoginUsuario(String email, String password, int telefono)
-
-    {
+    public LoginUsuario(String email, String password, int telefono)    {
         this.correo = email;
         this.contrasena = password;
         this.telefono = telefono;
