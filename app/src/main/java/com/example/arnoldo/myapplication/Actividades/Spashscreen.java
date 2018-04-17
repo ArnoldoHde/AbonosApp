@@ -30,7 +30,7 @@ public class Spashscreen extends AppCompatActivity {
             @Override
             public void run() {
                 //empesar siguiente actividad
-                Intent mainIntent =new Intent().setClass(Spashscreen.this, InicioActivity.class);
+                Intent mainIntent =new Intent().setClass(Spashscreen.this, Registro.class);
                 startActivity(mainIntent);
                 //cerramos la actividad para que el usuario no pueda regresar a ella
                 finish();

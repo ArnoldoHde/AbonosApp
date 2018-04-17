@@ -17,7 +17,7 @@ import com.example.arnoldo.myapplication.R;
 public class fragment_clientes extends Fragment {
 
 
-    TextView tv;
+
     public fragment_clientes() {
         // Required empty public constructor
     }
@@ -28,7 +28,7 @@ public class fragment_clientes extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView=inflater.inflate(R.layout.fragment_clientes, container, false);
-        tv= rootView.findViewById(R.id.tvcliente);
+
 
         return rootView;
 
