@@ -13,7 +13,14 @@
         android:theme="@style/abono">
         <activity
             android:name=".Actividades.MainActivity"
-            android:theme="@style/abono" />
+            android:theme="@style/abono">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".Actividades.Registro" />
 
         <activity

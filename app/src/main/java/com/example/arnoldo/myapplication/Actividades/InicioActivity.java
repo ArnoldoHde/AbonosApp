@@ -81,8 +81,8 @@ public class InicioActivity extends AppCompatActivity
             public void onClick(View view) {
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-       Intent intent= new Intent(InicioActivity.this,AgregarActivity.class);
-            startActivity(intent);
+                Intent intent = new Intent(view.getContext(), AgregarActivity.class);
+                startActivity(intent);
             }
         });
 

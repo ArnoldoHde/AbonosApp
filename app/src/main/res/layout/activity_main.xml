@@ -6,53 +6,43 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+
     tools:context="com.example.arnoldo.myapplication.Actividades.MainActivity">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-
-        android:background="@drawable/login"
-        />
+        android:background="@drawable/login" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Abonos App"
         android:textSize="20sp"
-
         />
     <EditText
         android:id="@+id/edtUsuario"
-        android:layout_width="match_parent"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
+        android:drawableLeft="@drawable/edtusuarioo"
         android:layout_marginTop="30dp"
-        android:hint="Usuario"/>
+        android:hint="Correo o numero de Telefono"/>
     <EditText
         android:id="@+id/edtContraseña"
-        android:layout_width="match_parent"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
         android:layout_gravity="center"
-        android:gravity="center"
         android:inputType="textPassword"
-        android:layout_marginTop="30dp"
-        android:hint="Contraseña"/>
-    <EditText
-        android:id="@+id/edtTelefono"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:inputType="number"
-        android:layout_marginTop="30dp"
-        android:hint="Telefono"/>
+        android:hint="Contraseña"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/btnIngresar"
-        android:layout_width="wrap_content"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:text="Ingresar"
         android:background="@color/colorAccent"
@@ -60,11 +50,11 @@
         android:layout_marginTop="30dp"/>
     <TextView
         android:id="@+id/tvCuenta"
-        android:layout_width="wrap_content"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
         android:hint="Crear Cuenta"
         android:textColor="#000"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:gravity="bottom|end"/>
 
 

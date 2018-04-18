@@ -3,6 +3,7 @@ package com.example.arnoldo.myapplication.Actividades;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,28 +16,31 @@ import com.example.arnoldo.myapplication.Managers.LoginManeger;
 import com.example.arnoldo.myapplication.Modelos.LoginUsuario;
 import com.example.arnoldo.myapplication.R;
 
+import java.util.regex.Pattern;
+
 public class MainActivity extends AppCompatActivity {
-EditText email,password,numTelefono;
+EditText email,password,number;
 TextView tvCuenta;
 Button btnIngresar;
 private LoginUsuario loginUsuario;
+int EMAIL_ADRES=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Prueba
         email=findViewById(R.id.edtUsuario);
+        number=findViewById(R.id.edtUsuario);
         password=findViewById(R.id.edtContraseña);
         tvCuenta=findViewById(R.id.tvCuenta);
         btnIngresar=findViewById(R.id.btnIngresar);
-        numTelefono=findViewById(R.id.edtTelefono);
-
-
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Login();
+
             }
         });
 
@@ -60,23 +64,29 @@ private LoginUsuario loginUsuario;
     //Creo el metodo para obtener el texto del layaut y validar los datos
     private void Login() {
         //valido si los campos estan bacios
-
         if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
             Toast.makeText(this, "Los campos no deben ir vacios", Toast.LENGTH_SHORT).show();
-        } else {
-            String correo = email.getText().toString();
-            String contrasena = password.getText().toString();
-            int telefono=Integer.parseInt(numTelefono.getText().toString());
+        }
 
+
+        String correo = email.getText().toString();//contiene lo que el usuario a introducido en nuestro campo de texto
+        String contrasena = password.getText().toString();
+        int telefono=Integer.parseInt(number.getText().toString());
+        if (ValidarUsuario(correo)&& ValidarUsuario(contrasena)) {
             loginUsuario = new LoginUsuario();
             loginUsuario.setCorreo(correo);
             loginUsuario.setContraseña(contrasena);
-            loginUsuario.setTelefono(telefono);
 
             LoginManeger.login(loginUsuario);
+            Toast.makeText(this, "En proceso", Toast.LENGTH_SHORT).show();
 
+          }
+          else {
+            Toast.makeText(this, "Usuario Incorrecto", Toast.LENGTH_SHORT).show();
         }
+        if (ValidarNumero(telefono))
     }
+
     public void setLogin(LoginEvent event){
 
         Toast.makeText(this, "Bienvenido"+event.getMessage(), Toast.LENGTH_SHORT).show();
@@ -88,4 +98,17 @@ private LoginUsuario loginUsuario;
         Toast.makeText(this, "Fallo Error"+event.getMessage(), Toast.LENGTH_SHORT).show();
         // evento para berificar si exsite algun error en los campos
     }
+    public static Boolean ValidarUsuario(String email){
+        return email!=null && email.trim().length()>0;
+    }
+    public static  Boolean ValidarNumero(String telefono){
+
+        if (telefono.matches("[0-9]*")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    }
+
 }
