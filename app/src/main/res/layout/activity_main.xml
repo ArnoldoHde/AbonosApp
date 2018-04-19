@@ -29,7 +29,7 @@
         android:gravity="center"
         android:drawableLeft="@drawable/edtusuarioo"
         android:layout_marginTop="30dp"
-        android:hint="Correo o numero de Telefono"/>
+        android:hint="Ingrese su Email"/>
     <EditText
         android:id="@+id/edtContraseña"
         android:layout_width="300sp"

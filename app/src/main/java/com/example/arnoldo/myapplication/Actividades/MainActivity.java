@@ -19,18 +19,18 @@ import com.example.arnoldo.myapplication.R;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
-EditText email,password,number;
+EditText email,password;
 TextView tvCuenta;
 Button btnIngresar;
 private LoginUsuario loginUsuario;
-int EMAIL_ADRES=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Prueba
         email=findViewById(R.id.edtUsuario);
-        number=findViewById(R.id.edtUsuario);
+
         password=findViewById(R.id.edtContraseña);
         tvCuenta=findViewById(R.id.tvCuenta);
         btnIngresar=findViewById(R.id.btnIngresar);
@@ -58,9 +58,7 @@ int EMAIL_ADRES=0;
         Intent intent= new Intent(MainActivity.this,Registro.class);
         startActivity(intent);
     }
-    private  void botonFlotante(){
-       // manda el intent a la actividad que quieras te amo cesar
-    }
+
     //Creo el metodo para obtener el texto del layaut y validar los datos
     private void Login() {
         //valido si los campos estan bacios
@@ -68,11 +66,11 @@ int EMAIL_ADRES=0;
             Toast.makeText(this, "Los campos no deben ir vacios", Toast.LENGTH_SHORT).show();
         }
 
-
         String correo = email.getText().toString();//contiene lo que el usuario a introducido en nuestro campo de texto
         String contrasena = password.getText().toString();
-        int telefono=Integer.parseInt(number.getText().toString());
-        if (ValidarUsuario(correo)&& ValidarUsuario(contrasena)) {
+
+        //valido si el correo es verdadero que acceda
+        if (validarEmail(correo)) {
             loginUsuario = new LoginUsuario();
             loginUsuario.setCorreo(correo);
             loginUsuario.setContraseña(contrasena);
@@ -80,11 +78,11 @@ int EMAIL_ADRES=0;
             LoginManeger.login(loginUsuario);
             Toast.makeText(this, "En proceso", Toast.LENGTH_SHORT).show();
 
-          }
-          else {
-            Toast.makeText(this, "Usuario Incorrecto", Toast.LENGTH_SHORT).show();
         }
-        if (ValidarNumero(telefono))
+        else {
+            Toast.makeText(this, "Usuario no Valido", Toast.LENGTH_SHORT).show();
+
+        }
     }
 
     public void setLogin(LoginEvent event){
@@ -98,17 +96,14 @@ int EMAIL_ADRES=0;
         Toast.makeText(this, "Fallo Error"+event.getMessage(), Toast.LENGTH_SHORT).show();
         // evento para berificar si exsite algun error en los campos
     }
-    public static Boolean ValidarUsuario(String email){
-        return email!=null && email.trim().length()>0;
-    }
-    public static  Boolean ValidarNumero(String telefono){
+    //creo el metodo para verificar si es un usuario valido
 
-        if (telefono.matches("[0-9]*")) {
-            return true;
-        } else {
-            return false;
+    private boolean validarEmail(String email) {
+            Pattern pattern = Patterns.EMAIL_ADDRESS;
+            return pattern.matcher(email).matches();
         }
-    }
+
     }
 
-}
+
+

@@ -26,6 +26,7 @@ public class LoginManeger {
         callResponse.enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                //Se valida si los datos enviados son correctos se manda el token generado
                 if (response.isSuccessful()) {
 
                     Gson gson = new Gson();
@@ -37,6 +38,7 @@ public class LoginManeger {
                     BusProvider.getInstnce().post((new LoginEvent(mesaje)));
 
                 } else {
+                    //en caso de que alla un error en el servidor se cachara y se plasma en pantalla
                     BusProvider.getInstnce().post(new ErrorEvent(response.message(), 0));
                 }
             }
