@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 import com.example.arnoldo.myapplication.R;
 
@@ -20,9 +21,11 @@ import com.example.arnoldo.myapplication.R;
  * A simple {@link Fragment} subclass.
  */
 public class fragment_agregarCliente extends Fragment {
-
-    EditText nombre,numero,direccion;
     public static final int CAMERA_REQUEST=123;
+
+
+    RadioGroup radioGroup;
+    EditText nombre,numero,direccion;
     ImageView imgFoto;
     Button btnAgregar;
 
@@ -37,7 +40,9 @@ public class fragment_agregarCliente extends Fragment {
         // Inflate the layout for this fragment
         View rootView=inflater.inflate(R.layout.fragment_agregar_cliente, container, false);
         imgFoto=rootView.findViewById(R.id.imageFotoCliente);
+        radioGroup=rootView.findViewById(R.id.rgSexo);
 
+        SeleccionSexo();
         imgFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +64,22 @@ public class fragment_agregarCliente extends Fragment {
             Bitmap photo= (Bitmap)data.getExtras().get("data");
             imgFoto.setImageBitmap(photo);
         }
+    }
+
+    public void SeleccionSexo(){
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case R.id.rbHombre:
+                        imgFoto.setImageResource(R.drawable.hombre);
+                        break;
+                    case R.id.rbMujer:
+                        imgFoto.setImageResource(R.drawable.mujer);
+                        break;
+                }
+            }
+        });
     }
 
 
