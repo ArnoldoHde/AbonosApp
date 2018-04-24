@@ -19,7 +19,7 @@ public interface Interfaz {
     @POST("login")
     Call<JsonObject> login(@Body LoginUsuario usuarioReg);
 
-    @POST("re")
+    @POST("usuario")
     Call<JsonObject> registro(@Body RegistroData registroUsuario);
 
 
