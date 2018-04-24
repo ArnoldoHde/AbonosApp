@@ -27,7 +27,7 @@ public class LoginUsuario {
 
     }
 
-  
+
 
     public String getCorreo() {
         return correo;

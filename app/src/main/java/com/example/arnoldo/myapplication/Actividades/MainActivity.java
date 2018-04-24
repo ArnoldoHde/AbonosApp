@@ -40,7 +40,6 @@ private LoginUsuario loginUsuario;
             public void onClick(View v) {
 
                 Login();
-
             }
         });
 
@@ -79,9 +78,8 @@ private LoginUsuario loginUsuario;
             Toast.makeText(this, "En proceso", Toast.LENGTH_SHORT).show();
 
         }
-        else {
-            Toast.makeText(this, "Usuario no Valido", Toast.LENGTH_SHORT).show();
-
+        if (!validarEmail("miEmail@gmail.com")){
+            email.setError("Email no válido");
         }
     }
 
@@ -90,6 +88,7 @@ private LoginUsuario loginUsuario;
         Toast.makeText(this, "Bienvenido"+event.getMessage(), Toast.LENGTH_SHORT).show();
         // debo agregar el intent a la pantalla principal
         Intent intent= new Intent( MainActivity.this,InicioActivity.class);
+        startActivity(intent);
     }
 
     public void LoginError(LoginErrorEvent event){
@@ -97,7 +96,7 @@ private LoginUsuario loginUsuario;
         // evento para berificar si exsite algun error en los campos
     }
     //creo el metodo para verificar si es un usuario valido
-
+    //Pattern
     private boolean validarEmail(String email) {
             Pattern pattern = Patterns.EMAIL_ADDRESS;
             return pattern.matcher(email).matches();

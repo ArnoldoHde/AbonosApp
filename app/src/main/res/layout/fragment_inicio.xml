@@ -6,10 +6,48 @@
     tools:context="com.example.arnoldo.myapplication.Fragmentos.fragment_inicio">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="inicio" />
+   <LinearLayout
 
+       android:gravity="center"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <TextView
+       android:layout_marginTop="20sp"
+       android:layout_width="150sp"
+       android:layout_height="wrap_content"
+       android:text="Vendido Total" />
+       <TextView
+           android:id="@+id/tvVenTotal"
+           android:layout_marginTop="10sp"
+           android:layout_width="150sp"
+           android:layout_height="wrap_content"
+           android:text="$ 0.0"
+           android:layout_marginLeft="50dp"/>
+       <TextView
+           android:layout_marginTop="30sp"
+           android:layout_width="150sp"
+           android:layout_height="wrap_content"
+           android:text="Cobrado Total" />
+       <TextView
+           android:id="@+id/tvCobTotal"
+           android:layout_marginTop="10sp"
+           android:layout_width="150sp"
+           android:layout_height="wrap_content"
+           android:text="$ 0.0"
+           android:layout_marginLeft="50dp"/>
+       <TextView
+           android:layout_marginTop="30sp"
+           android:layout_width="150sp"
+           android:layout_height="wrap_content"
+           android:text="Cobrado Este Mes" />
+       <TextView
+           android:id="@+id/tvMes"
+           android:layout_marginTop="10sp"
+           android:layout_width="150sp"
+           android:layout_height="wrap_content"
+           android:text="$ 0.0"
+           android:layout_marginLeft="50dp"/>
+   </LinearLayout>
 
 </FrameLayout>
