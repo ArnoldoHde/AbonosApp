@@ -19,8 +19,10 @@ import com.example.arnoldo.myapplication.R;
 import com.squareup.otto.Subscribe;
 
 public class Registro extends AppCompatActivity {
-EditText cPass,Nombre,Pass,Email,Telefono;
+EditText cPass,Nombre,Pass,Email,edtTelefono;
 Button btnRegistro;
+
+
     private RegistroData registroUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +32,13 @@ Button btnRegistro;
         Pass=findViewById(R.id.Pass);
         Nombre=findViewById(R.id.Nombre);
         Email=findViewById(R.id.E_mail);
-        Telefono=findViewById(R.id.Tell);
+        edtTelefono=findViewById(R.id.Tell);
         btnRegistro=findViewById(R.id.btnRegistrar);
 
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
-            SingUp();
+                               SingUp();
 
             }
         });
@@ -49,18 +48,22 @@ Button btnRegistro;
         //valido si los campos estan bacios
 
         if (Nombre.getText().toString().isEmpty() || Pass.getText().toString().isEmpty()||Pass.getText().toString().isEmpty()||Email.getText().toString().isEmpty()||
-                Telefono.getText().toString().isEmpty()||cPass.getText().toString().isEmpty()) {
+                edtTelefono.getText().toString().isEmpty()||cPass.getText().toString().isEmpty()) {
             Toast.makeText(this, "Los campos no deben ir vacios", Toast.LENGTH_SHORT).show();
         } else {
+
+
+            String nombre = Nombre.getText().toString();
+            String email = Email.getText().toString();
+            String pass = Pass.getText().toString();
+            String confirmPass = cPass.getText().toString();
+            String telefono = edtTelefono.getText().toString();
+            int tel = Integer.parseInt(telefono);
             RegistroData registroData = new RegistroData();
             registroData.setNombre(Nombre.getText().toString());
             registroData.setCorreo(Email.getText().toString());
+            registroData.setTelefono(tel);
             registroData.setContraseña(Pass.getText().toString());
-            int telefono=Integer.parseInt(Telefono.getText().toString());
-            registroData.setTelefono(telefono);
-
-
-
             RegistroManager.singUp(registroData);
 
         }

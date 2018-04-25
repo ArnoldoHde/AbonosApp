@@ -11,22 +11,22 @@ public class RegistroData {
     private String nombre;
     private String correo;
     private int telefono;
-    private String contraseña;
+    private String contrasena;
 
 
 
-    public RegistroData(String nombre, String correo, int telefono, String contraseña) {
+    public RegistroData(String nombre, String correo, int telefono, String contrasena) {
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
 
     public RegistroData() {
         this.nombre = "";
         this.correo = "";
-        this.telefono = Integer.parseInt("");
-        this.contraseña ="";
+        this.telefono = 0;
+        this.contrasena ="";
     }
 
     public String getNombre() {
@@ -54,11 +54,11 @@ public class RegistroData {
     }
 
     public String getContraseña() {
-        return contraseña;
+        return contrasena;
     }
 
     public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+        this.contrasena = contraseña;
     }
 
 

@@ -49,7 +49,7 @@ private LoginUsuario loginUsuario;
                 crearCuenta();
             }
         });
-        //Prueba Conexion de Alan
+
 
 
     }
@@ -78,8 +78,8 @@ private LoginUsuario loginUsuario;
             Toast.makeText(this, "En proceso", Toast.LENGTH_SHORT).show();
 
         }
-        if (!validarEmail("miEmail@gmail.com")){
-            email.setError("Email no válido");
+        else {
+            Toast.makeText(this, "usuario no Valido", Toast.LENGTH_SHORT).show();
         }
     }
 

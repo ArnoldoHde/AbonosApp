@@ -21,7 +21,7 @@ public class RegistroManager {
     public static void singUp(RegistroData registro) {
         Call<JsonObject> callResponse = ApiControler
                 .createService(Interfaz.class)
-                .registro(registro);
+                .usuario(registro);
         callResponse.enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
