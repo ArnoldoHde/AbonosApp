@@ -20,9 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".Actividades.Registro" />
-
         <activity
             android:name=".Actividades.InicioActivity"
             android:label="@string/title_activity_inicio"
@@ -32,14 +30,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-         </activity>
-
+        </activity>
         <activity
             android:name=".Actividades.Spashscreen"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-
-        </activity>
-
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity
             android:name=".Actividades.AgregarActivity"
             android:parentActivityName=".Actividades.InicioActivity"
@@ -48,6 +42,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Actividades.InicioActivity" />
         </activity>
+        <activity android:name=".Actividades.Pedidos"></activity>
     </application>
 
 </manifest>

@@ -28,9 +28,8 @@ private LoginUsuario loginUsuario;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Prueba
-        email=findViewById(R.id.edtUsuario);
 
+        email=findViewById(R.id.edtUsuario);
         password=findViewById(R.id.edtContraseña);
         tvCuenta=findViewById(R.id.tvCuenta);
         btnIngresar=findViewById(R.id.btnIngresar);
