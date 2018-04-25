@@ -18,11 +18,11 @@ import retrofit2.Response;
 /*Aqui en el manejador se mandan llamar las diferentes actividades que se necesitan para enviar
     la informacion, validar si es correcto y obtener la respuesta del la api.*/
 public class LoginManeger {
-    public static void login(LoginUsuario usuarioReg) {
+    public static void login(LoginUsuario usuarioRegistrado) {
 
         Call<JsonObject> callResponse = ApiControler
                 .createService(Interfaz.class)
-                .login(usuarioReg);
+                .iniciosesion(usuarioRegistrado);
         callResponse.enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
@@ -38,7 +38,7 @@ public class LoginManeger {
                     BusProvider.getInstnce().post((new LoginEvent(mesaje)));
 
                 } else {
-                    //en caso de que alla un error en el servidor se cachara y se plasma en pantalla
+      //en caso de que alla un error en el servidor se cachara y se plasma en pantalla
                     BusProvider.getInstnce().post(new ErrorEvent(response.message(), 0));
                 }
             }

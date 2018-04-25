@@ -28,9 +28,8 @@ private LoginUsuario loginUsuario;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Prueba
-        email=findViewById(R.id.edtUsuario);
 
+        email=findViewById(R.id.edtUsuario);
         password=findViewById(R.id.edtContraseña);
         tvCuenta=findViewById(R.id.tvCuenta);
         btnIngresar=findViewById(R.id.btnIngresar);
@@ -49,7 +48,7 @@ private LoginUsuario loginUsuario;
                 crearCuenta();
             }
         });
-        //Prueba Conexion de Alan
+
 
 
     }
@@ -78,8 +77,8 @@ private LoginUsuario loginUsuario;
             Toast.makeText(this, "En proceso", Toast.LENGTH_SHORT).show();
 
         }
-        if (!validarEmail("miEmail@gmail.com")){
-            email.setError("Email no válido");
+        else {
+            Toast.makeText(this, "usuario no Valido", Toast.LENGTH_SHORT).show();
         }
     }
 

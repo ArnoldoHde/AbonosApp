@@ -25,7 +25,7 @@ public class RegistroData {
     public RegistroData() {
         this.nombre = "";
         this.correo = "";
-        this.telefono = Integer.parseInt("");
+        this.telefono = 0;
         this.contrasena ="";
     }
 
