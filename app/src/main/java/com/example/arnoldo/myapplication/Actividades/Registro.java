@@ -50,7 +50,8 @@ Button btnRegistro;
          if (edtNombre.getText().toString().isEmpty() || edtPass.getText().toString().isEmpty() || edtEmail.getText().toString().isEmpty() ||
                            edtTelefono.getText().toString().isEmpty() || edtCpass.getText().toString().isEmpty()) {
 
-             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT);
+             Toast.makeText(this, "Los campos no deben estar vacios", Toast.LENGTH_SHORT).show();
+
 
          }else {
 
@@ -68,7 +69,7 @@ Button btnRegistro;
                     RegistroManager.singUp(registroData);
 
                 }else {
-                    Toast.makeText(this, "Los campos no deben estar vacios", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT);
                 }
 
 
