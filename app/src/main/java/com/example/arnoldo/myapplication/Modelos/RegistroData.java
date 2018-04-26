@@ -10,12 +10,12 @@ package com.example.arnoldo.myapplication.Modelos;
 public class RegistroData {
     private String nombre;
     private String correo;
-    private int telefono;
+    private String telefono;
     private String contrasena;
 
 
 
-    public RegistroData(String nombre, String correo, int telefono, String contrasena) {
+    public RegistroData(String nombre, String correo, String telefono, String contrasena) {
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
@@ -25,7 +25,7 @@ public class RegistroData {
     public RegistroData() {
         this.nombre = "";
         this.correo = "";
-        this.telefono = 0;
+        this.telefono = "";
         this.contrasena ="";
     }
 
@@ -49,7 +49,7 @@ public class RegistroData {
         return Integer.parseInt(String.valueOf(telefono));
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

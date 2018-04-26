@@ -1,5 +1,6 @@
 package com.example.arnoldo.myapplication.Actividades;
 
+import android.content.Intent;
 import android.os.UserManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -58,12 +59,11 @@ Button btnRegistro;
             String pass = Pass.getText().toString();
             String confirmPass = cPass.getText().toString();
             String telefono = edtTelefono.getText().toString();
-            int tel = Integer.parseInt(telefono);
             RegistroData registroData = new RegistroData();
-            registroData.setNombre(Nombre.getText().toString());
-            registroData.setCorreo(Email.getText().toString());
-            registroData.setTelefono(tel);
-            registroData.setContraseña(Pass.getText().toString());
+            registroData.setNombre(nombre);
+            registroData.setCorreo(email);
+            registroData.setTelefono(telefono);
+            registroData.setContraseña(pass);
             RegistroManager.singUp(registroData);
 
         }
@@ -72,6 +72,9 @@ Button btnRegistro;
     @Subscribe
     public void signupOk(SingUpEvent signUpEvent) {
         signUpEvent.toString();
+
+        Intent intent = new Intent(Registro.this, InicioActivity.class);
+        startActivity(intent);
     }
 
     @Subscribe

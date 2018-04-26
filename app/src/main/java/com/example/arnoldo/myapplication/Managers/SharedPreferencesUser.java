@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 
 class SharedPreferencesUser {
     public static final String PREF_TOKEN = "token";
+    String Mensaje;
 
     private SharedPreferences prefs;
 
