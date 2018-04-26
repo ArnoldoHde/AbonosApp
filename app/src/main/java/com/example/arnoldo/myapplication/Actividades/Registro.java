@@ -48,31 +48,33 @@ Button btnRegistro;
     private void SingUp() {
         //valido si los campos estan bacios
          if (edtNombre.getText().toString().isEmpty() || edtPass.getText().toString().isEmpty() || edtEmail.getText().toString().isEmpty() ||
-                           edtTelefono.getText().toString().isEmpty() || edtCpass.getText().toString().isEmpty())
-        {
-            if (edtCpass.getText().toString() == edtPass.getText().toString())  {
+                           edtTelefono.getText().toString().isEmpty() || edtCpass.getText().toString().isEmpty()) {
 
-                String nombre = edtNombre.getText().toString();
-                String email = edtEmail.getText().toString();
-                String pass = edtPass.getText().toString();
-                String telefono = edtTelefono.getText().toString();
-                RegistroData registroData = new RegistroData();
-                registroData.setNombre(nombre);
-                registroData.setCorreo(email);
-                registroData.setTelefono(telefono);
-                registroData.setContrasena(pass);
-                RegistroManager.singUp(registroData);
+             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT);
 
-            } else {
-                Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT);
+         }else {
 
+                if (edtCpass.getText().toString() == edtPass.getText().toString())  {
+
+                    String nombre = edtNombre.getText().toString();
+                    String email = edtEmail.getText().toString();
+                    String pass = edtPass.getText().toString();
+                    String telefono = edtTelefono.getText().toString();
+                    RegistroData registroData = new RegistroData();
+                    registroData.setNombre(nombre);
+                    registroData.setCorreo(email);
+                    registroData.setTelefono(telefono);
+                    registroData.setContrasena(pass);
+                    RegistroManager.singUp(registroData);
+
+                }else {
+                    Toast.makeText(this, "Los campos no deben estar vacios", Toast.LENGTH_SHORT).show();
+                }
 
 
             }
-        } else {
-             Toast.makeText(this, "Los campos no deben estar vacios", Toast.LENGTH_SHORT).show();
         }
-    }
+
 
     @Subscribe
     public void signupOk(SingUpEvent signUpEvent) {
