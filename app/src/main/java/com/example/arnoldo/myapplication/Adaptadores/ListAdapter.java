@@ -1,41 +1,39 @@
 package com.example.arnoldo.myapplication.Adaptadores;
 
 import android.app.Activity;
+import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.arnoldo.myapplication.R;
 
+import java.util.List;
+/*
 public class ListAdapter extends ArrayAdapter<String> {
 
-    private  final Activity context;
-    private  final String[] itemname;
-    private  final Integer[] integers;
+   private List<String> listaClientes;
 
-    public ListAdapter(Activity context, String[] itemname, Integer[] integers, Activity context1, String[] itemname1, Integer[] integers1){
-        super(context, R.layout.fila_lista, itemname);
-        this.context = context1;
-        this.itemname = itemname1;
-        this.integers = integers1;
+    public ListAdapter( Context context, List<String> Clientes) {
+        super(context, R.layout.fragment_clientes, Clientes);
+        this.listaClientes = Clientes;
     }
 
-    public View getView(int posicion, View view, ViewGroup parent){
-        LayoutInflater inflater=context.getLayoutInflater();
-        View rowView = inflater.inflate(R.layout.fila_lista,null,true);
+    public View getView(int position,View convertView, ViewGroup parent){
 
-        TextView txtTitle =  rowView.findViewById(R.id.texto_principal);
-        ImageView imageView = rowView.findViewById(R.id.icon);
-        TextView etxDescripcion = rowView.findViewById(R.id.texto_secundario);
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        View item = inflater.inflate(R.layout.fila_lista,null);
 
-        txtTitle.setText(itemname[posicion]);
-        imageView.setImageResource(integers[posicion]);
-        etxDescripcion.setText("Descripción"+itemname[posicion]);
+        TextView texto_principal= item.findViewById(R.id.texto_principal);
+        texto_principal.setText(listaClientes.get(position).);
 
-        return rowView;
+        TextView texto_secundario= item.findViewById(R.id.texto_secundario);
+        ImageView icon =(ImageView) item.findViewById(R.id.icon);
     }
-
 }
+*/;

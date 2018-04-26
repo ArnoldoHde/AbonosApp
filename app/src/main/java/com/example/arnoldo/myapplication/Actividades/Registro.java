@@ -20,7 +20,7 @@ import com.example.arnoldo.myapplication.R;
 import com.squareup.otto.Subscribe;
 
 public class Registro extends AppCompatActivity {
-EditText cPass,Nombre,Pass,Email,edtTelefono;
+EditText edtCpass,edtNombre,edtPass,edtEmail,edtTelefono;
 Button btnRegistro;
 
 
@@ -29,11 +29,11 @@ Button btnRegistro;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
-        cPass=findViewById(R.id.cPass);
-        Pass=findViewById(R.id.Pass);
-        Nombre=findViewById(R.id.Nombre);
-        Email=findViewById(R.id.E_mail);
-        edtTelefono=findViewById(R.id.Tell);
+        edtCpass=findViewById(R.id.edtCpass);
+        edtPass=findViewById(R.id.edtPass);
+        edtNombre=findViewById(R.id.edtNombre);
+        edtEmail=findViewById(R.id.edtE_mail);
+        edtTelefono=findViewById(R.id.edtTell);
         btnRegistro=findViewById(R.id.btnRegistrar);
 
         btnRegistro.setOnClickListener(new View.OnClickListener() {
@@ -47,25 +47,29 @@ Button btnRegistro;
 
     private void SingUp() {
         //valido si los campos estan bacios
+        if (edtCpass.getText().toString() == edtPass.getText().toString()) {
+            if (edtNombre.getText().toString().isEmpty() || edtPass.getText().toString().isEmpty() || edtEmail.getText().toString().isEmpty() ||
+                    edtTelefono.getText().toString().isEmpty() || edtCpass.getText().toString().isEmpty()) {
 
-        if (Nombre.getText().toString().isEmpty() || Pass.getText().toString().isEmpty()||Pass.getText().toString().isEmpty()||Email.getText().toString().isEmpty()||
-                edtTelefono.getText().toString().isEmpty()||cPass.getText().toString().isEmpty()) {
-            Toast.makeText(this, "Los campos no deben ir vacios", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(this, "Los campos no deben estar vacios", Toast.LENGTH_SHORT).show();
+            } else {
+
+
+                String nombre = edtNombre.getText().toString();
+                String email = edtEmail.getText().toString();
+                String pass = edtPass.getText().toString();
+                String telefono = edtTelefono.getText().toString();
+                RegistroData registroData = new RegistroData();
+                registroData.setNombre(nombre);
+                registroData.setCorreo(email);
+                registroData.setTelefono(telefono);
+                registroData.setContrasena(pass);
+                RegistroManager.singUp(registroData);
+
+            }
         } else {
-
-
-            String nombre = Nombre.getText().toString();
-            String email = Email.getText().toString();
-            String pass = Pass.getText().toString();
-            String confirmPass = cPass.getText().toString();
-            String telefono = edtTelefono.getText().toString();
-            RegistroData registroData = new RegistroData();
-            registroData.setNombre(nombre);
-            registroData.setCorreo(email);
-            registroData.setTelefono(telefono);
-            registroData.setContraseña(pass);
-            RegistroManager.singUp(registroData);
-
+            Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT);
         }
     }
 

@@ -17,7 +17,7 @@ import com.example.arnoldo.myapplication.R;
 
 import java.util.regex.Pattern;
 
-public class MainActivity extends AppCompatActivity {
+public class    MainActivity extends AppCompatActivity {
 EditText email,password;
 TextView tvCuenta;
 Button btnIngresar;

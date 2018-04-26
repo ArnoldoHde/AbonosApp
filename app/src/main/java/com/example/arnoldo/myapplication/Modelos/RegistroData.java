@@ -45,21 +45,19 @@ public class RegistroData {
         this.correo = correo;
     }
 
-    public int getTelefono() {
-        return Integer.parseInt(String.valueOf(telefono));
+    public String getTelefono() {
+        return telefono;
     }
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    public String getContraseña() {
+    public String getContrasena() {
         return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contrasena = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
-
-
 }

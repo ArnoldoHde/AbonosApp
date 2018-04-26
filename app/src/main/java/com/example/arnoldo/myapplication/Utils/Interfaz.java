@@ -1,12 +1,19 @@
 package com.example.arnoldo.myapplication.Utils;
 
+import android.os.Handler;
+
+import com.example.arnoldo.myapplication.Modelos.ClienteData;
 import com.example.arnoldo.myapplication.Modelos.LoginUsuario;
 import com.example.arnoldo.myapplication.Modelos.RegistroData;
 import com.example.arnoldo.myapplication.Modelos.RegistroPedido;
 import com.google.gson.JsonObject;
 
+import java.util.List;
+
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -23,8 +30,8 @@ public interface Interfaz {
     @POST("usuario")
     Call<JsonObject> registro(@Body RegistroData registroUsuario);
 
-    @POST("pedidos")
-    Call<JsonObject> pedido(@Body RegistroPedido registroPedido);
+    @GET("clientes")
+    Callback<JsonObject> clientes(@Body ClienteData clienteData);
 
 
 }
