@@ -1,9 +1,6 @@
 package com.example.arnoldo.myapplication.Managers;
 
-import android.content.Intent;
-import android.widget.Toast;
-
-import com.example.arnoldo.myapplication.Actividades.InicioActivity;
+import com.example.arnoldo.myapplication.Events.ErrorEvent;
 import com.example.arnoldo.myapplication.Events.SingUpEvent;
 import com.example.arnoldo.myapplication.Modelos.RegistroData;
 import com.example.arnoldo.myapplication.Utils.ApiControler;
@@ -17,8 +14,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static android.support.v4.content.ContextCompat.startActivity;
-
 /**
  * Created by alan on 11/04/18.
  */
@@ -27,7 +22,7 @@ public class RegistroManager {
     public static void singUp(RegistroData registro) {
         Call<JsonObject> callResponse = ApiControler
                 .createService(Interfaz.class)
-                .registro(registro);
+                .registra(registro);
         callResponse.enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
@@ -45,6 +40,7 @@ public class RegistroManager {
 
                     }else{
                         BusProvider.getInstnce().post(new ErrorEvent(response.message(), 0));
+                        //BusProvider.getInstnce().post(new ErrorEvent(response.message(), 0));
                     }
 
                 }

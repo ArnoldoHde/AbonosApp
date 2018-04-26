@@ -28,7 +28,7 @@ public interface Interfaz {
     Call<JsonObject> iniciosesion(@Body LoginUsuario usuarioRegistrado);
 
     @POST("usuario")
-    Call<JsonObject> registro(@Body RegistroData registroUsuario);
+    Call<JsonObject> registra(@Body RegistroData registroUsuario);
 
     @GET("clientes")
     Callback<JsonObject> clientes(@Body ClienteData clienteData);

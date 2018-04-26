@@ -1,4 +1,5 @@
 package com.example.arnoldo.myapplication.Managers;
+import com.example.arnoldo.myapplication.Events.ErrorEvent;
 import com.example.arnoldo.myapplication.Events.LoginEvent;
 import com.example.arnoldo.myapplication.Utils.Interfaz;
 import com.example.arnoldo.myapplication.Modelos.LoginUsuario;

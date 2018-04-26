@@ -1,12 +1,13 @@
-package com.example.arnoldo.myapplication.Managers;
+package com.example.arnoldo.myapplication.Events;
 
 /**
  * Created by arnoldo on 10/04/18.
  */
 
-class ErrorEvent {
+public class ErrorEvent {
     public String message = "";
     public int code = 0;
+
     public ErrorEvent(String message, int code) {
         this.message = message;
         this.code = code;

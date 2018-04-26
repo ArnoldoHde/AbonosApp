@@ -1,8 +1,6 @@
 package com.example.arnoldo.myapplication.Actividades;
 
 import android.content.Intent;
-import android.os.UserManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View;
@@ -10,16 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.arnoldo.myapplication.Events.LoginErrorEvent;
+import com.example.arnoldo.myapplication.Events.ErrorEvent;
 import com.example.arnoldo.myapplication.Events.SingUpEvent;
-import com.example.arnoldo.myapplication.Managers.LoginManeger;
 import com.example.arnoldo.myapplication.Managers.RegistroManager;
-import com.example.arnoldo.myapplication.Modelos.LoginUsuario;
 import com.example.arnoldo.myapplication.Modelos.RegistroData;
 import com.example.arnoldo.myapplication.R;
+import com.example.arnoldo.myapplication.Utils.BaseActivity;
 import com.squareup.otto.Subscribe;
 
-public class Registro extends AppCompatActivity {
+public class Registro extends BaseActivity {
 EditText edtCpass,edtNombre,edtPass,edtEmail,edtTelefono;
 Button btnRegistro;
 
@@ -40,6 +37,7 @@ Button btnRegistro;
             @Override
             public void onClick(View v) {
                                SingUp();
+
 
             }
         });
@@ -86,7 +84,7 @@ Button btnRegistro;
     }
 
     @Subscribe
-    public void signupError(LoginErrorEvent errorEvent) {
+    public void signupError(ErrorEvent errorEvent) {
         Toast.makeText(this, "Error: "+errorEvent.getMessage(), Toast.LENGTH_SHORT).show();
     }
 }
