@@ -17,10 +17,11 @@ class SharedPreferencesUser {
         prefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
     }
 
-    public void saveSession(String token) {
+    public void saveSession(String token, String mensaje) {
         SharedPreferences.Editor editor = prefs.edit();
 
         editor.putString(PREF_TOKEN, token);
+        this.Mensaje=mensaje;
 
         editor.apply();
     }

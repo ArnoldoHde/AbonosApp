@@ -26,11 +26,12 @@ Button btnRegistro;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
-        edtCpass=findViewById(R.id.edtCpass);
-        edtPass=findViewById(R.id.edtPass);
         edtNombre=findViewById(R.id.edtNombre);
-        edtEmail=findViewById(R.id.edtE_mail);
+        edtEmail=findViewById(R.id.edtEmailRegistro);
         edtTelefono=findViewById(R.id.edtTell);
+        edtPass=findViewById(R.id.edtPass);
+        edtCpass=findViewById(R.id.edtCpass);
+
         btnRegistro=findViewById(R.id.btnRegistrar);
 
         btnRegistro.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +58,8 @@ Button btnRegistro;
 
                     String nombre = edtNombre.getText().toString();
                     String email = edtEmail.getText().toString();
-                    String pass = edtPass.getText().toString();
                     String telefono = edtTelefono.getText().toString();
+                    String pass = edtPass.getText().toString();
                     String cpass=edtCpass.getText().toString();
 
                     RegistroData registroData = new RegistroData();
@@ -82,6 +83,7 @@ Button btnRegistro;
     public void signupOk(SingUpEvent signUpEvent) {
         signUpEvent.toString();
 
+        Toast.makeText(this, "Exito: "+signUpEvent.getMessage(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(Registro.this, InicioActivity.class);
         startActivity(intent);
     }

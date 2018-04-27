@@ -32,9 +32,10 @@ public class LoginManeger {
 
                     Gson gson = new Gson();
 
+
                     JsonObject respuesta = response.body();
                     JsonElement token = respuesta.get("autorizacion");
-                    Config.sharedPreferencesUser.saveSession(token.toString());
+                    //Config.sharedPreferencesUser.saveSession(token.toString());
                     String mesaje = token.toString();
                     BusProvider.getInstnce().post((new LoginEvent(mesaje)));
 
