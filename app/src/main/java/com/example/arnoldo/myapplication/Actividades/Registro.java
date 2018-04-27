@@ -59,11 +59,14 @@ Button btnRegistro;
                     String email = edtEmail.getText().toString();
                     String pass = edtPass.getText().toString();
                     String telefono = edtTelefono.getText().toString();
+                    String cpass=edtCpass.getText().toString();
+
                     RegistroData registroData = new RegistroData();
                     registroData.setNombre(nombre);
                     registroData.setCorreo(email);
                     registroData.setTelefono(telefono);
                     registroData.setContrasena(pass);
+                    registroData.setConfirmar(cpass);
                     RegistroManager.singUp(registroData);
 
                 }else {

@@ -12,14 +12,16 @@ public class RegistroData {
     private String correo;
     private String telefono;
     private String contrasena;
+    private String confirmar;
 
 
 
-    public RegistroData(String nombre, String correo, String telefono, String contrasena) {
+    public RegistroData(String nombre, String correo, String telefono, String contrasena,String confirmar) {
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
         this.contrasena = contrasena;
+        this.confirmar=confirmar;
     }
 
     public RegistroData() {
@@ -27,6 +29,7 @@ public class RegistroData {
         this.correo = "";
         this.telefono = "";
         this.contrasena ="";
+        this.confirmar="";
     }
 
     public String getNombre() {
@@ -59,5 +62,13 @@ public class RegistroData {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    public String getConfirmar() {
+        return confirmar;
+    }
+
+    public void setConfirmar(String confirmar) {
+        this.confirmar = confirmar;
     }
 }
