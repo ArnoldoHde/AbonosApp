@@ -21,10 +21,8 @@ public class Pedidos extends AppCompatActivity {
     RadioButton rbVenta,rbPedido;
     EditText cliente,edtModelo,edtCantidad,edtProducto,edtTalla,edtColor,edtCostoProd;
     Button btnAgregar;
-    int venta=0;
-    int Pedido=0;
-    ArrayAdapter<String> adapter;
-    String[] data={"Arnoldo Hernandez"};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +40,10 @@ public class Pedidos extends AppCompatActivity {
         rbVenta=findViewById(R.id.rbVenta);
         rbPedido=findViewById(R.id.rbPedido);
         btnAgregar=findViewById(R.id.btnAgregarPedido);
+        // se creo un arreglo para guardar el numero de venta o pedido que sea
+        final int pedidos [];
+        pedidos= new int [10];
+
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +58,8 @@ public class Pedidos extends AppCompatActivity {
                 String color=edtColor.getText().toString();
                 int costo=Integer.parseInt(edtCostoProd.getText().toString());
                 //si se ha pulsado el radioButton de venta que envie esos datos
-            if (rbVenta.isChecked()==true){
+            if (rbVenta.isChecked()==true){//el for nos servira para guaradar el numero de ventas en un arreglo
+                for(int valor=0;valor<=pedidos.length;valor ++) {
 
                     registroPedido = new RegistroPedido();
                     registroPedido.setModelo(modelo);
@@ -65,22 +68,23 @@ public class Pedidos extends AppCompatActivity {
                     registroPedido.setTalla(talla);
                     registroPedido.setColor(color);
                     registroPedido.setCosto(costo);
-                    registroPedido.setVenta(venta);
+                    registroPedido.setVenta(valor);
 
-
+                }
                 // necesito el manejador indicado para mandarlos datos
 
  }
-            if(rbPedido.isChecked()==true){
-                registroPedido= new RegistroPedido();
+            if(rbPedido.isChecked()==true) {
+                for(int valor=0;valor<=pedidos.length;valor ++){
+                registroPedido = new RegistroPedido();
                 registroPedido.setModelo(modelo);
                 registroPedido.setCantidad(cantidad);
                 registroPedido.setProducto(producto);
                 registroPedido.setTalla(talla);
                 registroPedido.setColor(color);
                 registroPedido.setCosto(costo);
-                registroPedido.setVenta(Pedido);
-
+                registroPedido.setVenta(valor);
+            }
             }else {
 
                 }
