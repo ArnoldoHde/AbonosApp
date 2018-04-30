@@ -33,5 +33,8 @@ public interface Interfaz {
     @GET("clientes")
     Callback<JsonObject> clientes(@Body ClienteData clienteData);
 
+    @POST("pedidos")
+    Call<JsonObject> pedido(@Body RegistroPedido registroPedido);// no lo borren que es el de pedido w
+
 
 }

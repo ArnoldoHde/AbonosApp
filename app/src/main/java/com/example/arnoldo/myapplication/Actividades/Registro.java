@@ -52,9 +52,8 @@ Button btnRegistro;
              Toast.makeText(this, "Los campos no deben estar vacios", Toast.LENGTH_SHORT).show();
 
 
-         }else {
-
-                if (edtCpass.getText().toString() == edtPass.getText().toString())  {
+         }
+         if (edtCpass.getText().toString() == edtPass.getText().toString())  {
 
                     String nombre = edtNombre.getText().toString();
                     String email = edtEmail.getText().toString();
@@ -76,7 +75,7 @@ Button btnRegistro;
 
 
             }
-        }
+
 
 
     @Subscribe

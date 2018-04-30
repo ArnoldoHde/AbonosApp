@@ -8,13 +8,13 @@ public class RegistroPedido {
  private String modelo;
  private int cantidad;
  private String producto;
- private int talla;
+ private String talla;
  private String color;
  private int costo;
  private int venta;
  private int pedido;
 
-    public RegistroPedido(String modelo, int cantidad, String producto, int talla, String color, int costo, int venta, int pedido) {
+    public RegistroPedido(String modelo, int cantidad, String producto,String talla, String color, int costo, int venta, int pedido) {
         this.modelo = modelo;
         this.cantidad = cantidad;
         this.producto = producto;
@@ -29,7 +29,7 @@ public class RegistroPedido {
         this.modelo = "";
         this.cantidad = 0;
         this.producto = "";
-        this.talla = 0;
+        this.talla = "";
         this.color = "";
         this.costo = 0;
         this.venta = 0;
@@ -60,11 +60,11 @@ public class RegistroPedido {
         this.producto = producto;
     }
 
-    public int getTalla() {
+    public String getTalla() {
         return talla;
     }
 
-    public void setTalla(int talla) {
+    public void setTalla(String talla) {
         this.talla = talla;
     }
 

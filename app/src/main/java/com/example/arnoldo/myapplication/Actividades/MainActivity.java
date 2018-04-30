@@ -73,7 +73,6 @@ private LoginUsuario loginUsuario;
             loginUsuario.setContraseña(contrasena);
 
             LoginManeger.login(loginUsuario);
-            Toast.makeText(this, "En proceso", Toast.LENGTH_SHORT).show();
 
         }
         else {
