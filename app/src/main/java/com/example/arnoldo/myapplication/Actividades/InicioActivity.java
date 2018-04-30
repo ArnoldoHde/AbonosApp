@@ -86,6 +86,10 @@ public class InicioActivity extends AppCompatActivity
             }
         });
 
+        Fragment FragmentInicio= new fragment_inicio();
+        FragmentManager fminicio=getSupportFragmentManager();
+        fminicio.beginTransaction().replace(R.id.contenedor,FragmentInicio).commit();
+
     }
 
     @Override

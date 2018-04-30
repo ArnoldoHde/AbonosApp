@@ -9,7 +9,7 @@ import android.content.SharedPreferences;
 
 class SharedPreferencesUser {
     public static final String PREF_TOKEN = "token";
-    String Mensaje;
+
 
     private SharedPreferences prefs;
 
@@ -17,11 +17,11 @@ class SharedPreferencesUser {
         prefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
     }
 
-    public void saveSession(String token, String mensaje) {
+    public void saveSession(String token) {
         SharedPreferences.Editor editor = prefs.edit();
 
         editor.putString(PREF_TOKEN, token);
-        this.Mensaje=mensaje;
+
 
         editor.apply();
     }

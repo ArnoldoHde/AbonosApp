@@ -1,26 +1,26 @@
 package com.example.arnoldo.myapplication.Modelos;
 
 public class ClienteData {
-   private int numero;
-   private String nombre,sexo,direccion,foto;
 
-    public ClienteData(int numero, String nombre, String sexo, String direccion, String foto) {
+   private String nombre,sexo,direccion,foto,numero;
+
+    public ClienteData(String numero, String nombre, String sexo, String direccion, String foto) {
 
     }
 
     public ClienteData() {
         this.nombre = "";
-        this.numero = 0;
+        this.numero = "";
         this.direccion = "";
         this.foto = "";
         this.sexo = "";
         }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 

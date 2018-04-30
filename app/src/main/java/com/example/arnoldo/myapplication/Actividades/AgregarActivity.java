@@ -53,5 +53,8 @@ public class AgregarActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigationAgregar);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        Fragment FragmentClienteAdd= new fragment_agregarCliente();
+        FragmentManager fmAddCliente=getSupportFragmentManager();
+        fmAddCliente.beginTransaction().replace(R.id.contenedorAgregar,FragmentClienteAdd).commit();
     }
 }

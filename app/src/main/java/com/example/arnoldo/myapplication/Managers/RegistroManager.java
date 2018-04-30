@@ -34,9 +34,8 @@ public class RegistroManager {
                     if (respuesta1) {
                         JsonElement mensaje = response.body().get("message");
                         JsonElement token = response.body().get("token");
-                       Config.sharedPreferencesUser.saveSession(token.toString(),mensaje.toString());
-                        String mesaje = token.toString();
-                        BusProvider.getInstnce().post((new SingUpEvent(mesaje)));
+                       Config.sharedPreferencesUser.saveSession(token.toString());
+                        BusProvider.getInstnce().post((new SingUpEvent(mensaje.toString())));
 
 
                     }else{

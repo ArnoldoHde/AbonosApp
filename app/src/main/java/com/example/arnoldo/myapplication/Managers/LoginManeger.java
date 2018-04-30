@@ -35,9 +35,8 @@ public class LoginManeger {
 
                     JsonObject respuesta = response.body();
                     JsonElement token = respuesta.get("autorizacion");
-                    //Config.sharedPreferencesUser.saveSession(token.toString());
-                    String mesaje = token.toString();
-                    BusProvider.getInstnce().post((new LoginEvent(mesaje)));
+                    Config.sharedPreferencesUser.saveSession(token.toString());
+                    BusProvider.getInstnce().post((new LoginEvent(respuesta.toString())));
 
                 } else {
       //en caso de que alla un error en el servidor se cachara y se plasma en pantalla
