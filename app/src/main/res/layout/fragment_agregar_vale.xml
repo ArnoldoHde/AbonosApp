@@ -1,13 +1,50 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
     tools:context="com.example.arnoldo.myapplication.Fragmentos.fragment_agregarVale">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <AutoCompleteTextView
+        android:id="@+id/tvBuscarClienteVale"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:hint="Buscar Cliente"
+        android:textAlignment="center"
+        />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/edtEmpresaDeVale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBuscarClienteVale"
+        android:layout_marginTop="25dp"
+        android:hint="Escribe la empresa del vale"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/edtCostoDeVale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtEmpresaDeVale"
+        android:layout_marginTop="25dp"
+        android:hint="Costo del Vale"
+        android:textAlignment="center"
+        />
+
+    <Button
+        android:id="@+id/btnAgregarVale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/edtCostoDeVale"
+        android:text="GENERAR VALE"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/withe"
+        android:background="@color/primary_material_light"
+        />
+
+
+</RelativeLayout>

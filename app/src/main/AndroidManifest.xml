@@ -24,19 +24,22 @@
 
         </activity>
 
+
         <activity
             android:name=".Actividades.InicioActivity"
             android:label="@string/title_activity_inicio"
             android:theme="@style/abono">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Actividades.Spashscreen"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".Actividades.AgregarActivity"
             android:parentActivityName=".Actividades.InicioActivity"

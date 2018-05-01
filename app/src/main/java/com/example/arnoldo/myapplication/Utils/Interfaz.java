@@ -6,6 +6,7 @@ import com.example.arnoldo.myapplication.Modelos.ClienteData;
 import com.example.arnoldo.myapplication.Modelos.LoginUsuario;
 import com.example.arnoldo.myapplication.Modelos.RegistroData;
 import com.example.arnoldo.myapplication.Modelos.RegistroPedido;
+import com.example.arnoldo.myapplication.Modelos.Vacio;
 import com.google.gson.JsonObject;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public interface Interfaz {
     Call<JsonObject> iniciosesion(@Body LoginUsuario usuarioRegistrado);
 
     @POST("registro")
-    Call<JsonObject> registra(@Body RegistroData registroUsuario);
+    Call<JsonObject> registra(@Body Vacio registroUsuario);
 
     @POST("registrarcliente")
     Call<JsonObject> clientes(@Body ClienteData clienteData);

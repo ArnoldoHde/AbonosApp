@@ -12,6 +12,7 @@ import com.example.arnoldo.myapplication.Events.ErrorEvent;
 import com.example.arnoldo.myapplication.Events.SingUpEvent;
 import com.example.arnoldo.myapplication.Managers.RegistroManager;
 import com.example.arnoldo.myapplication.Modelos.RegistroData;
+import com.example.arnoldo.myapplication.Modelos.Vacio;
 import com.example.arnoldo.myapplication.R;
 import com.example.arnoldo.myapplication.Utils.BaseActivity;
 import com.squareup.otto.Subscribe;
@@ -52,29 +53,33 @@ Button btnRegistro;
              Toast.makeText(this, "Los campos no deben estar vacios", Toast.LENGTH_SHORT).show();
 
 
-         }
-         if (edtCpass.getText().toString() == edtPass.getText().toString())  {
+         }else{
+         /*if (edtCpass.getText().toString() == edtPass.getText().toString())  {*/
 
                     String nombre = edtNombre.getText().toString();
-                    String email = edtEmail.getText().toString();
+                    String correo = edtEmail.getText().toString();
                     String telefono = edtTelefono.getText().toString();
-                    String pass = edtPass.getText().toString();
-                    String cpass=edtCpass.getText().toString();
+                    String contrasena = edtPass.getText().toString();
+                    String confirmar=edtCpass.getText().toString();
 
                     RegistroData registroData = new RegistroData();
                     registroData.setNombre(nombre);
-                    registroData.setCorreo(email);
+                    registroData.setCorreo(correo);
                     registroData.setTelefono(telefono);
-                    registroData.setContrasena(pass);
-                    registroData.setConfirmar(cpass);
-                    RegistroManager.singUp(registroData);
+                    registroData.setContrasena(contrasena);
+                    registroData.setConfirmar(confirmar);
+                    Vacio vacio = new Vacio(registroData);
+                    vacio.setUsuario(registroData);
+                    RegistroManager.singUp(vacio);
 
-                }else {
+
+                }//else {
                     Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT);
                 }
 
 
-            }
+
+
 
 
 

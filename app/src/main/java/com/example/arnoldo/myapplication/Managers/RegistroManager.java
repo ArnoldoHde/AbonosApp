@@ -3,6 +3,7 @@ package com.example.arnoldo.myapplication.Managers;
 import com.example.arnoldo.myapplication.Events.ErrorEvent;
 import com.example.arnoldo.myapplication.Events.SingUpEvent;
 import com.example.arnoldo.myapplication.Modelos.RegistroData;
+import com.example.arnoldo.myapplication.Modelos.Vacio;
 import com.example.arnoldo.myapplication.Utils.ApiControler;
 import com.example.arnoldo.myapplication.Utils.BusProvider;
 import com.example.arnoldo.myapplication.Utils.Interfaz;
@@ -19,10 +20,10 @@ import retrofit2.Response;
  */
 
 public class RegistroManager {
-    public static void singUp(RegistroData registro) {
+    public static void singUp(Vacio vacio) {
         Call<JsonObject> callResponse = ApiControler
                 .createService(Interfaz.class)
-                .registra(registro);
+                .registra(vacio);
         callResponse.enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
@@ -40,7 +41,7 @@ public class RegistroManager {
 
                     }else{
                         BusProvider.getInstnce().post(new ErrorEvent(response.message(), 0));
-                        //BusProvider.getInstnce().post(new ErrorEvent(response.message(), 0));
+
                     }
 
                 }

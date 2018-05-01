@@ -12,18 +12,22 @@ class SharedPreferencesUser {
 
 
     private SharedPreferences prefs;
+    private SharedPreferences prefsm;
 
     public SharedPreferencesUser(Context context) {
         prefs = context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
+        prefsm= context.getSharedPreferences(context.getPackageName(), Context.MODE_PRIVATE);
     }
 
     public void saveSession(String token) {
         SharedPreferences.Editor editor = prefs.edit();
+        SharedPreferences.Editor editorm = prefsm.edit();
 
         editor.putString(PREF_TOKEN, token);
 
 
         editor.apply();
+        editorm.apply();
     }
 
     public String getCurrentUser() {

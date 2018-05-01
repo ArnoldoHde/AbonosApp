@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ public class fragment_agregarCliente extends Fragment {
 
 
     RadioGroup radioGroup;
+    RadioButton rbHombre,rbMujer;
     EditText nombre,numero,direccion;
     ImageView imgFoto;
     Button btnAgregar;
@@ -71,8 +73,16 @@ public class fragment_agregarCliente extends Fragment {
             }
         });
 
+        btnAgregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                agregarCliente();
+            }
+        });
 
         return rootView;
+
+
 
 
 
