@@ -5,5 +5,5 @@ package com.example.arnoldo.myapplication.Utils;
  */
 
 public class LinkConsumo {
-    public static final String KEY_URL = "http://192.168.0.50:3000/api/";
+    public static final String KEY_URL = "http://192.168.0.50:8080/api/";
 }

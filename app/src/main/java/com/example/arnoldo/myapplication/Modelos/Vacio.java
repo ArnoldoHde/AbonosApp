@@ -12,6 +12,10 @@ public class Vacio {
         this.usuario = usuario;
     }
 
+    public Vacio() {
+        this.usuario = null;
+
+    }
 
     public RegistroData getUsuario() {
         return usuario;

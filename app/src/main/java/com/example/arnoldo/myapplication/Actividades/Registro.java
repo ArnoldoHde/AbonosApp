@@ -22,7 +22,6 @@ EditText edtCpass,edtNombre,edtPass,edtEmail,edtTelefono;
 Button btnRegistro;
 
 
-    private RegistroData registroUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,15 +61,15 @@ Button btnRegistro;
                     String contrasena = edtPass.getText().toString();
                     String confirmar=edtCpass.getText().toString();
 
+                    //Vacio vacio = new Vacio();
                     RegistroData registroData = new RegistroData();
                     registroData.setNombre(nombre);
                     registroData.setCorreo(correo);
                     registroData.setTelefono(telefono);
                     registroData.setContrasena(contrasena);
                     registroData.setConfirmar(confirmar);
-                    Vacio vacio = new Vacio(registroData);
-                    vacio.setUsuario(registroData);
-                    RegistroManager.singUp(vacio);
+                    //vacio.setUsuario(registroData);
+                    RegistroManager.singUp(registroData);
 
 
                 }//else {
@@ -78,22 +77,17 @@ Button btnRegistro;
                 }
 
 
+        @Subscribe
+        public void signupOk(SingUpEvent signUpEvent) {
+            signUpEvent.toString();
 
+            Toast.makeText(this, "Exito: "+signUpEvent.getMessage(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Registro.this, InicioActivity.class);
+            startActivity(intent);
+        }
 
-
-
-
-    @Subscribe
-    public void signupOk(SingUpEvent signUpEvent) {
-        signUpEvent.toString();
-
-        Toast.makeText(this, "Exito: "+signUpEvent.getMessage(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(Registro.this, InicioActivity.class);
-        startActivity(intent);
-    }
-
-    @Subscribe
-    public void signupError(ErrorEvent errorEvent) {
-        Toast.makeText(this, "Error: "+errorEvent.getMessage(), Toast.LENGTH_SHORT).show();
-    }
+        @Subscribe
+        public void signupError(ErrorEvent errorEvent) {
+            Toast.makeText(this, "Error: "+errorEvent.getMessage(), Toast.LENGTH_SHORT).show();
+        }
 }

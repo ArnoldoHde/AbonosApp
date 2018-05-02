@@ -23,7 +23,6 @@ import com.example.arnoldo.myapplication.Events.ErrorEvent;
 import com.example.arnoldo.myapplication.Events.SingUpEvent;
 import com.example.arnoldo.myapplication.Managers.ClientesManager;
 import com.example.arnoldo.myapplication.Modelos.ClienteData;
-import com.example.arnoldo.myapplication.Modelos.RegistroData;
 import com.example.arnoldo.myapplication.R;
 import com.squareup.otto.Subscribe;
 
